@@ -25,6 +25,8 @@
           pkgs.jq
           pkgs.mob
           pkgs.nil
+          pkgs.git
+          pkgs.just
 
           # MacOS App packages
           pkgs.discord
