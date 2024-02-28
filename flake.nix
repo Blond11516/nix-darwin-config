@@ -29,7 +29,6 @@
           pkgs.just
 
           # MacOS App packages
-          pkgs.discord
           pkgs.slack
           pkgs.rectangle
           pkgs.obsidian
