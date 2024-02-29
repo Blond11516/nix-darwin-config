@@ -98,6 +98,7 @@
       homebrew.casks = [
         "discord"
         "cf-keylayout"
+        "mongodb-compass"
       ];
 
       # Copy applications installed via Nix to ~ so Spotlight can index them
