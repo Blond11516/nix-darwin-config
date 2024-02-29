@@ -5,9 +5,31 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+
+    nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
+    homebrew-core = {
+      url = "github:homebrew/homebrew-core";
+      flake = false;
+    };
+    homebrew-cask = {
+      url = "github:homebrew/homebrew-cask";
+      flake = false;
+    };
+    homebrew-bundle = {
+      url = "github:homebrew/homebrew-bundle";
+      flake = false;
+    };
+    homebrew-joallard-cf-keylayout = {
+      url = "github:joallard/homebrew-cf-keylayout";
+      flake = false;
+    };
+    homebrew-firefox-profile-switcher = {
+      url = "github:null-dev/homebrew-firefox-profile-switcher";
+      flake = false;
+    };
   };
   
-  outputs = inputs@{ self, nix-darwin, nixpkgs }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew, homebrew-core, homebrew-cask, homebrew-bundle, homebrew-joallard-cf-keylayout, homebrew-firefox-profile-switcher }:
   let
     me = "etiennelevesque";
 
@@ -66,6 +88,38 @@
 
       nixpkgs.config.allowUnfree = true;
 
+      # Homebrew
+      homebrew.enable = true;
+      homebrew.onActivation.cleanup = "zap";
+      homebrew.taps = [
+        "homebrew/bundle"
+        "joallard/cf-keylayout"
+        "null-dev/firefox-profile-switcher"
+      ];
+      homebrew.brews = [
+        "autoconf"
+        "openssl@3"
+        "gettext"
+        "cairo"
+        "cloc"
+        "firefoxpwa"
+        "harfbuzz"
+        "openjdk"
+        "fop"
+        "gnupg"
+        "libxslt"
+        "mise"
+        "openssl@1.1"
+        "python@3.11"
+        "wxwidgets"
+        "zsh-autosuggestions"
+        "firefox-profile-switcher-connector"
+      ];
+      homebrew.casks = [
+        "discord"
+        "cf-keylayout"
+      ];
+
       # Copy applications installed via Nix to ~ so Spotlight can index them
       # Inspired from https://github.com/andreykaipov/self/blob/384292d67c76b4a0df2308f51f8eb39abb36725c/.config/nix/packages/default.nix#L35-L64
       # Related issue: https://github.com/LnL7/nix-darwin/issues/214
@@ -108,7 +162,36 @@
     # Build darwin flake using:
     # $ darwin-rebuild build --flake .#Etienne-Levesque-MacBook-Pro-16-inch-2019
     darwinConfigurations."Etienne-Levesque-MacBook-Pro-16-inch-2019" = nix-darwin.lib.darwinSystem {
-      modules = [ configuration ];
+      modules = [
+        nix-homebrew.darwinModules.nix-homebrew
+        {
+          nix-homebrew = {
+            # Install Homebrew under the default prefix
+            enable = true;
+
+            # Apple Silicon Only: Also install Homebrew under the default Intel prefix for Rosetta 2
+            # enableRosetta = true;
+
+            # User owning the Homebrew prefix
+            user = me;
+
+            # Optional: Declarative tap management
+            # taps = {
+            #   "homebrew/homebrew-core" = homebrew-core;
+            #   "homebrew/homebrew-cask" = homebrew-cask;
+            #   "homebrew/bundle" = homebrew-bundle;
+            #   # "joallard/cf-keylayout" = homebrew-joallard-cf-keylayout;
+            #   # "null-dev/firefox-profile-switcher" = homebrew-firefox-profile-switcher;
+            # };
+
+            # Optional: Enable fully-declarative tap management
+            #
+            # With mutableTaps disabled, taps can no longer be added imperatively with `brew tap`.
+            mutableTaps = true;
+          };
+        }
+        configuration
+      ];
     };
 
     # Expose the package set, including overlays, for convenience.
