@@ -35,86 +35,6 @@
         "type": "github"
       }
     },
-    "homebrew-bundle": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1708991727,
-        "narHash": "sha256-oKdrQKkhtKVeibaO9LbMd/lEpVbLsf3IoU9UgRQklCg=",
-        "owner": "homebrew",
-        "repo": "homebrew-bundle",
-        "rev": "77f5526b935e5eb6714f905032616882ec7c1747",
-        "type": "github"
-      },
-      "original": {
-        "owner": "homebrew",
-        "repo": "homebrew-bundle",
-        "type": "github"
-      }
-    },
-    "homebrew-cask": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1709169235,
-        "narHash": "sha256-1VoW8B+jGU8ki5UUYLx0cksalmxOK10XwYxeBZULZ2U=",
-        "owner": "homebrew",
-        "repo": "homebrew-cask",
-        "rev": "c9f57326c7c90e0fb55d2c5bd0b55f47f9b1c8cd",
-        "type": "github"
-      },
-      "original": {
-        "owner": "homebrew",
-        "repo": "homebrew-cask",
-        "type": "github"
-      }
-    },
-    "homebrew-core": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1709171804,
-        "narHash": "sha256-EfT/PF/eXGwXwOFf08ERcSI6MukZHurkzeHP55IqGW8=",
-        "owner": "homebrew",
-        "repo": "homebrew-core",
-        "rev": "15187aa349474dd31313451cba98b0dd73f497c6",
-        "type": "github"
-      },
-      "original": {
-        "owner": "homebrew",
-        "repo": "homebrew-core",
-        "type": "github"
-      }
-    },
-    "homebrew-firefox-profile-switcher": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1647976971,
-        "narHash": "sha256-7bcUkqXHN3YsLp8/aPTaRvpPNJEGlq7axuY1IW6z9ZU=",
-        "owner": "null-dev",
-        "repo": "homebrew-firefox-profile-switcher",
-        "rev": "d199dbe16b3b3b28e099b27f3aaf1fe3107cd661",
-        "type": "github"
-      },
-      "original": {
-        "owner": "null-dev",
-        "repo": "homebrew-firefox-profile-switcher",
-        "type": "github"
-      }
-    },
-    "homebrew-joallard-cf-keylayout": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1606878575,
-        "narHash": "sha256-hDVxttCzKsdCdxJyMyDJ7DDX3XD/mqC/qtSd7Mr2uH0=",
-        "owner": "joallard",
-        "repo": "homebrew-cf-keylayout",
-        "rev": "8a47fcf715a892a8a406cf7770c2de62f50c7b2f",
-        "type": "github"
-      },
-      "original": {
-        "owner": "joallard",
-        "repo": "homebrew-cf-keylayout",
-        "type": "github"
-      }
-    },
     "nix-darwin": {
       "inputs": {
         "nixpkgs": [
@@ -221,11 +141,6 @@
     },
     "root": {
       "inputs": {
-        "homebrew-bundle": "homebrew-bundle",
-        "homebrew-cask": "homebrew-cask",
-        "homebrew-core": "homebrew-core",
-        "homebrew-firefox-profile-switcher": "homebrew-firefox-profile-switcher",
-        "homebrew-joallard-cf-keylayout": "homebrew-joallard-cf-keylayout",
         "nix-darwin": "nix-darwin",
         "nix-homebrew": "nix-homebrew",
         "nixpkgs": "nixpkgs_3"

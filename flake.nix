@@ -7,29 +7,9 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
 
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
-    homebrew-core = {
-      url = "github:homebrew/homebrew-core";
-      flake = false;
-    };
-    homebrew-cask = {
-      url = "github:homebrew/homebrew-cask";
-      flake = false;
-    };
-    homebrew-bundle = {
-      url = "github:homebrew/homebrew-bundle";
-      flake = false;
-    };
-    homebrew-joallard-cf-keylayout = {
-      url = "github:joallard/homebrew-cf-keylayout";
-      flake = false;
-    };
-    homebrew-firefox-profile-switcher = {
-      url = "github:null-dev/homebrew-firefox-profile-switcher";
-      flake = false;
-    };
   };
   
-  outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew, homebrew-core, homebrew-cask, homebrew-bundle, homebrew-joallard-cf-keylayout, homebrew-firefox-profile-switcher }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew }:
   let
     me = "etiennelevesque";
 
@@ -176,13 +156,7 @@
             user = me;
 
             # Optional: Declarative tap management
-            # taps = {
-            #   "homebrew/homebrew-core" = homebrew-core;
-            #   "homebrew/homebrew-cask" = homebrew-cask;
-            #   "homebrew/bundle" = homebrew-bundle;
-            #   # "joallard/cf-keylayout" = homebrew-joallard-cf-keylayout;
-            #   # "null-dev/firefox-profile-switcher" = homebrew-firefox-profile-switcher;
-            # };
+            # taps = { };
 
             # Optional: Enable fully-declarative tap management
             #
