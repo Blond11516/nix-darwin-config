@@ -12,6 +12,8 @@
   outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew }:
   let
     me = "etiennelevesque";
+    system = "x86_64-darwin";
+    deviceName = "Etienne-Levesque-MacBook-Pro-16-inch-2019";
 
     configuration = { pkgs, lib, config, ... }: {
       # List packages installed in system profile. To search by name, run:
@@ -64,7 +66,7 @@
       system.stateVersion = 4;
 
       # The platform the configuration will be used on.
-      nixpkgs.hostPlatform = "x86_64-darwin";
+      nixpkgs.hostPlatform = system;
 
       nixpkgs.config.allowUnfree = true;
 
@@ -156,7 +158,7 @@
   {
     # Build darwin flake using:
     # $ darwin-rebuild build --flake .#Etienne-Levesque-MacBook-Pro-16-inch-2019
-    darwinConfigurations."Etienne-Levesque-MacBook-Pro-16-inch-2019" = nix-darwin.lib.darwinSystem {
+    darwinConfigurations."${deviceName}" = nix-darwin.lib.darwinSystem {
       modules = [
         nix-homebrew.darwinModules.nix-homebrew
         {
@@ -184,6 +186,6 @@
     };
 
     # Expose the package set, including overlays, for convenience.
-    darwinPackages = self.darwinConfigurations."Etienne-Levesque-MacBook-Pro-16-inch-2019".pkgs;
+    darwinPackages = self.darwinConfigurations."${deviceName}".pkgs;
   };
 }
