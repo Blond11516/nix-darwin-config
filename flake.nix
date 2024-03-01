@@ -116,6 +116,10 @@
         "keymapp"
         "zed"
       ];
+      # How to find a mas app ID: https://github.com/mas-cli/mas?tab=readme-ov-file#-usage
+      homebrew.masApps = {
+        # Xcode = 497799835;
+      };
 
       # Copy applications installed via Nix to ~ so Spotlight can index them
       # Inspired from https://github.com/andreykaipov/self/blob/384292d67c76b4a0df2308f51f8eb39abb36725c/.config/nix/packages/default.nix#L35-L64
