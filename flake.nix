@@ -99,6 +99,20 @@
         "discord"
         "cf-keylayout"
         "mongodb-compass"
+        "alfred"
+        "alt-tab"
+        "docker"
+        "figma"
+        "firefox"
+        "foxitreader"
+        "google-chrome"
+        "insomnium"
+        "libreoffice"
+        "microsoft-teams"
+        "obs"
+        "scroll-reverser"
+        "keymapp"
+        "zed"
       ];
 
       # Copy applications installed via Nix to ~ so Spotlight can index them
