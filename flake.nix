@@ -31,6 +31,7 @@
           pkgs.nil
           pkgs.git
           pkgs.just
+          pkgs.eza
 
           # MacOS App packages
           pkgs.slack
