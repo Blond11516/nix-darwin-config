@@ -39,7 +39,6 @@
           pkgs.obsidian
           pkgs.iterm2
           pkgs.darwin.discrete-scroll
-          pkgs.dbeaver
           pkgs.vscode
           pkgs.jetbrains.idea-ultimate
         ];
@@ -116,6 +115,7 @@
         "scroll-reverser"
         "keymapp"
         "zed"
+        "dbeaver-community"
       ];
       # How to find a mas app ID: https://github.com/mas-cli/mas?tab=readme-ov-file#-usage
       homebrew.masApps = {
