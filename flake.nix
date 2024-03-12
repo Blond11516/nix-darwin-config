@@ -11,7 +11,7 @@
   
   outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew }:
   let
-    me = "etiennelevesque";
+    user = "etiennelevesque";
     system = "x86_64-darwin";
     deviceName = "Etienne-Levesque-MacBook-Pro-16-inch-2019";
 
@@ -70,64 +70,14 @@
 
       nixpkgs.config.allowUnfree = true;
 
-      # Homebrew
-      homebrew.enable = true;
-      homebrew.onActivation.cleanup = "zap";
-      homebrew.taps = [
-        "homebrew/bundle"
-        "joallard/cf-keylayout"
-        "null-dev/firefox-profile-switcher"
-      ];
-      homebrew.brews = [
-        "autoconf"
-        "openssl@3"
-        "gettext"
-        "cairo"
-        "cloc"
-        "firefoxpwa"
-        "harfbuzz"
-        "openjdk"
-        "fop"
-        "gnupg"
-        "libxslt"
-        "mise"
-        "openssl@1.1"
-        "python@3.11"
-        "wxwidgets"
-        "zsh-autosuggestions"
-        "firefox-profile-switcher-connector"
-      ];
-      homebrew.casks = [
-        "discord"
-        "cf-keylayout"
-        "mongodb-compass"
-        "alfred"
-        "alt-tab"
-        "docker"
-        "figma"
-        "firefox"
-        "foxitreader"
-        "google-chrome"
-        "insomnium"
-        "libreoffice"
-        "microsoft-teams"
-        "obs"
-        "scroll-reverser"
-        "keymapp"
-        "zed"
-        "dbeaver-community"
-      ];
-      # How to find a mas app ID: https://github.com/mas-cli/mas?tab=readme-ov-file#-usage
-      homebrew.masApps = {
-        # Xcode = 497799835;
-      };
+      homebrew = import ./homebrew.nix;
 
       # Copy applications installed via Nix to ~ so Spotlight can index them
       # Inspired from https://github.com/andreykaipov/self/blob/384292d67c76b4a0df2308f51f8eb39abb36725c/.config/nix/packages/default.nix#L35-L64
       # Related issue: https://github.com/LnL7/nix-darwin/issues/214
       system.activationScripts.applications.text = pkgs.lib.mkForce (''
         IFS=$'\n'
-        USER_HOME=/Users/${me}
+        USER_HOME=/Users/${user}
         NIX_APPS_DIRECTORY=/Applications/Nix\ Apps
 
         echo "Setting up $NIX_APPS_DIRECTORY"
@@ -175,7 +125,7 @@
             # enableRosetta = true;
 
             # User owning the Homebrew prefix
-            user = me;
+            inherit user;
 
             # Optional: Declarative tap management
             # taps = { };
