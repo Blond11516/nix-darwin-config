@@ -11,13 +11,12 @@
   
   outputs = { self, nix-darwin, nix-homebrew, ... }:
   let
-    user = "etiennelevesque";
-    deviceName = "Etienne-Levesque-MacBook-Pro-16-inch-2019";
+    constants = import ./constants.nix;
   in
   {
     # Build darwin flake using:
     # $ darwin-rebuild build --flake .#Etienne-Levesque-MacBook-Pro-16-inch-2019
-    darwinConfigurations."${deviceName}" = nix-darwin.lib.darwinSystem {
+    darwinConfigurations."${constants.deviceName}" = nix-darwin.lib.darwinSystem {
       modules = [
         nix-homebrew.darwinModules.nix-homebrew
         {
@@ -29,7 +28,7 @@
             # enableRosetta = true;
 
             # User owning the Homebrew prefix
-            inherit user;
+            user = constants.user;
 
             # Optional: Declarative tap management
             # taps = { };
@@ -45,6 +44,6 @@
     };
 
     # Expose the package set, including overlays, for convenience.
-    darwinPackages = self.darwinConfigurations."${deviceName}".pkgs;
+    darwinPackages = self.darwinConfigurations."${constants.deviceName}".pkgs;
   };
 }

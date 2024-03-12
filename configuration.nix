@@ -1,8 +1,7 @@
 { self }:
 { pkgs, config, ... }:
 let
-  user = "etiennelevesque";
-  system = "x86_64-darwin";
+  constants = import ./constants.nix;
 in
 {
   imports = [];
@@ -34,7 +33,7 @@ in
   system.stateVersion = 4;
 
   # The platform the configuration will be used on.
-  nixpkgs.hostPlatform = system;
+  nixpkgs.hostPlatform = constants.system;
 
   nixpkgs.config.allowUnfree = true;
 
@@ -45,7 +44,7 @@ in
   # Related issue: https://github.com/LnL7/nix-darwin/issues/214
   system.activationScripts.applications.text = pkgs.lib.mkForce (''
     IFS=$'\n'
-    USER_HOME=/Users/${user}
+    USER_HOME=/Users/${constants.user}
     NIX_APPS_DIRECTORY=/Applications/Nix\ Apps
 
     echo "Setting up $NIX_APPS_DIRECTORY"
