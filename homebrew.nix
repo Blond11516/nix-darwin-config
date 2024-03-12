@@ -1,11 +1,6 @@
 {
   enable = true;
   onActivation.cleanup = "zap";
-  taps = [
-    "homebrew/bundle"
-    "joallard/cf-keylayout"
-    "null-dev/firefox-profile-switcher"
-  ];
   brews = [
     "autoconf"
     "openssl@3"
