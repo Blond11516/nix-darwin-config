@@ -18,30 +18,7 @@
     configuration = { pkgs, lib, config, ... }: {
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
-      environment.systemPackages =
-        [ pkgs.vim
-          pkgs.bat
-          pkgs.btop
-          pkgs.direnv
-          pkgs.curl
-          pkgs.flyctl
-          pkgs.hyperfine
-          pkgs.jq
-          pkgs.mob
-          pkgs.nil
-          pkgs.git
-          pkgs.just
-          pkgs.eza
-
-          # MacOS App packages
-          pkgs.slack
-          pkgs.rectangle
-          pkgs.obsidian
-          pkgs.iterm2
-          pkgs.darwin.discrete-scroll
-          pkgs.vscode
-          pkgs.jetbrains.idea-ultimate
-        ];
+      environment.systemPackages = pkgs.callPackage ./packages.nix { inherit pkgs; };
 
       # Auto upgrade nix package and the daemon service.
       services.nix-daemon.enable = true;
