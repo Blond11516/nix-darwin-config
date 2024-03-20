@@ -70,6 +70,7 @@ in
 
         if [ "$hash1" != "$hash2" ]; then
             echo "Current hash of '$name' differs than the Nix store's. Overwriting..."
+            rm -rf $dst
             cp -R "$src" $NIX_APPS_DIRECTORY
             echo "Done"
         fi
