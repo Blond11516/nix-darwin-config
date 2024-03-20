@@ -39,6 +39,10 @@ in
 
   homebrew = import ./homebrew.nix;
 
+  networking = {
+    computerName = constants.deviceName;
+  };
+
   # Copy applications installed via Nix to ~ so Spotlight can index them
   # Inspired from https://github.com/andreykaipov/self/blob/384292d67c76b4a0df2308f51f8eb39abb36725c/.config/nix/packages/default.nix#L35-L64
   # Related issue: https://github.com/LnL7/nix-darwin/issues/214
