@@ -1,7 +1,6 @@
 { pkgs }:
 with pkgs;
 [ 
-  vim
   bat
   btop
   direnv
