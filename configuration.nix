@@ -85,4 +85,43 @@ in
         fi
     done
   '');
+
+  system = {
+    defaults = {
+      NSGlobalDomain = {
+        AppleShowAllExtensions = true;
+        AppleShowAllFiles = true;
+        AppleShowScrollBars = "Automatic";
+        ApplePressAndHoldEnabled = false;
+        InitialKeyRepeat = 25;
+        KeyRepeat = 2;
+        NSAutomaticCapitalizationEnabled = false;
+        NSAutomaticDashSubstitutionEnabled = false;
+        NSAutomaticPeriodSubstitutionEnabled = false;
+        NSAutomaticQuoteSubstitutionEnabled = false;
+        NSAutomaticSpellingCorrectionEnabled = false;
+        NSDocumentSaveNewDocumentsToCloud = false;
+        "com.apple.keyboard.fnState" = true;
+        "com.apple.swipescrolldirection" = false;
+      };
+      dock = {
+        autohide = true;
+        tilesize = 32;
+      };
+      finder = {
+        AppleShowAllExtensions = true;
+        AppleShowAllFiles = true;
+        FXEnableExtensionChangeWarning = false;
+        QuitMenuItem = true;
+        ShowPathbar = true;
+      };
+      loginwindow = {
+        GuestEnabled = false;
+      };
+      screensaver = {
+        askForPassword = true;
+        askForPasswordDelay = 0;
+      };
+    };
+  };
 }
