@@ -18,7 +18,6 @@ with pkgs;
   slack
   rectangle
   obsidian
-  iterm2
   darwin.discrete-scroll
   vscode
   jetbrains.idea-ultimate
