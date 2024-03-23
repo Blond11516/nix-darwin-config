@@ -13,6 +13,8 @@ with pkgs;
   git
   just
   eza
+  zoxide
+  fzf
 
   # MacOS App packages
   slack
