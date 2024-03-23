@@ -32,7 +32,6 @@
     "discord"
     "cf-keylayout"
     "mongodb-compass"
-    "alfred"
     "alt-tab"
     "docker"
     "figma"
