@@ -17,38 +17,6 @@
         "type": "github"
       }
     },
-    "cf-keylayout": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1606878575,
-        "narHash": "sha256-hDVxttCzKsdCdxJyMyDJ7DDX3XD/mqC/qtSd7Mr2uH0=",
-        "owner": "joallard",
-        "repo": "homebrew-cf-keylayout",
-        "rev": "8a47fcf715a892a8a406cf7770c2de62f50c7b2f",
-        "type": "github"
-      },
-      "original": {
-        "owner": "joallard",
-        "repo": "homebrew-cf-keylayout",
-        "type": "github"
-      }
-    },
-    "firefox-profile-switcher": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1647976971,
-        "narHash": "sha256-7bcUkqXHN3YsLp8/aPTaRvpPNJEGlq7axuY1IW6z9ZU=",
-        "owner": "null-dev",
-        "repo": "homebrew-firefox-profile-switcher",
-        "rev": "d199dbe16b3b3b28e099b27f3aaf1fe3107cd661",
-        "type": "github"
-      },
-      "original": {
-        "owner": "null-dev",
-        "repo": "homebrew-firefox-profile-switcher",
-        "type": "github"
-      }
-    },
     "flake-utils": {
       "inputs": {
         "systems": "systems"
@@ -64,22 +32,6 @@
       "original": {
         "owner": "numtide",
         "repo": "flake-utils",
-        "type": "github"
-      }
-    },
-    "homebrew-bundle": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1710458677,
-        "narHash": "sha256-m8JAD5OwtXS7Et4Zq1ElHnBxt+gk4yWMCkiOk8VvrGE=",
-        "owner": "homebrew",
-        "repo": "homebrew-bundle",
-        "rev": "faf12b3096f5e05aba220c380cfff6a223572917",
-        "type": "github"
-      },
-      "original": {
-        "owner": "homebrew",
-        "repo": "homebrew-bundle",
         "type": "github"
       }
     },
@@ -189,9 +141,6 @@
     },
     "root": {
       "inputs": {
-        "cf-keylayout": "cf-keylayout",
-        "firefox-profile-switcher": "firefox-profile-switcher",
-        "homebrew-bundle": "homebrew-bundle",
         "nix-darwin": "nix-darwin",
         "nix-homebrew": "nix-homebrew",
         "nixpkgs": "nixpkgs_3"

@@ -6,21 +6,9 @@
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
-    homebrew-bundle = {
-      url = "github:homebrew/homebrew-bundle";
-      flake = false;
-    };
-    cf-keylayout = {
-      url = "github:joallard/homebrew-cf-keylayout";
-      flake = false;
-    };
-    firefox-profile-switcher = {
-      url = "github:null-dev/homebrew-firefox-profile-switcher";
-      flake = false;
-    };
   };
   
-  outputs = { self, nix-darwin, nix-homebrew, homebrew-bundle, cf-keylayout, firefox-profile-switcher, ... }:
+  outputs = { self, nix-darwin, nix-homebrew, ... }:
   let
     constants = import ./constants.nix;
   in
@@ -42,16 +30,12 @@
             user = constants.user;
 
             # Optional: Declarative tap management
-            taps = {
-              "homebrew/bundle" = homebrew-bundle;
-              "joallard/cf-keylayout" = cf-keylayout;
-              "null-dev/firefox-profile-switcher" = firefox-profile-switcher;
-            };
+            taps = { };
 
             # Optional: Enable fully-declarative tap management
             #
             # With mutableTaps disabled, taps can no longer be added imperatively with `brew tap`.
-            mutableTaps = false;
+            mutableTaps = true;
 
             autoMigrate = true;
           };
