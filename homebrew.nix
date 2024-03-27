@@ -29,6 +29,7 @@
     "firefox-profile-switcher-connector"
   ];
   casks = [
+    "alfred"
     "discord"
     "cf-keylayout"
     "mongodb-compass"
