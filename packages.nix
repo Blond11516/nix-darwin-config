@@ -17,8 +17,6 @@ with pkgs;
   fzf
 
   # MacOS App packages
-  slack
-  rectangle
   obsidian
   darwin.discrete-scroll
   vscode

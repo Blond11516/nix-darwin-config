@@ -48,6 +48,8 @@
     "zed"
     "dbeaver-community"
     "alacritty"
+    "slack"
+    "rectangle"
   ];
   # How to find a mas app ID: https://github.com/mas-cli/mas?tab=readme-ov-file#-usage
   masApps = {
