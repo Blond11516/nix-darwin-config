@@ -15,6 +15,7 @@ with pkgs;
   eza
   zoxide
   fzf
+  ngrok
 
   # MacOS App packages
   obsidian
