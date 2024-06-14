@@ -20,6 +20,4 @@ with pkgs;
   # MacOS App packages
   obsidian
   darwin.discrete-scroll
-  vscode
-  jetbrains.idea-ultimate
 ]
