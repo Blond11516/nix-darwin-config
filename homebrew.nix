@@ -11,7 +11,7 @@
   ];
   brews = [
     "autoconf"
-    "openssl@3"
+    "openssl"
     "gettext"
     "cairo"
     "cloc"
