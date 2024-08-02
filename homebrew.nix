@@ -29,7 +29,6 @@
     "firefox-profile-switcher-connector"
   ];
   casks = [
-    "alfred"
     "discord"
     "cf-keylayout"
     "mongodb-compass"
@@ -49,10 +48,9 @@
     "dbeaver-community"
     "alacritty"
     "slack"
-    "rectangle"
     "visual-studio-code"
     "intellij-idea"
-    "yaak",
+    "yaak"
     "raycast"
   ];
   # How to find a mas app ID: https://github.com/mas-cli/mas?tab=readme-ov-file#-usage
