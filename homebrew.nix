@@ -38,7 +38,6 @@
     "firefox"
     "foxitreader"
     "google-chrome"
-    "insomnium"
     "libreoffice"
     "microsoft-teams"
     "obs"
