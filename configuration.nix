@@ -25,6 +25,9 @@ in
       enableCompletion = true;
       enableSyntaxHighlighting = true;
     };
+    fish = {
+      enable = true;
+    };
     vim = {
       enable = true;
     };
