@@ -27,13 +27,15 @@
     "wxwidgets"
     "zsh-autosuggestions"
     "firefox-profile-switcher-connector"
+    "remotemobprogramming/brew/mob"
+    "podman"
+    "podman-compose"
   ];
   casks = [
     "discord"
     "cf-keylayout"
     "mongodb-compass"
     "alt-tab"
-    "docker"
     "figma"
     "firefox"
     "foxitreader"
@@ -52,6 +54,9 @@
     "yaak"
     "raycast"
     "thunderbird"
+    "pycharm"
+    "docker"
+    "ghostty"
   ];
   # How to find a mas app ID: https://github.com/mas-cli/mas?tab=readme-ov-file#-usage
   masApps = {
