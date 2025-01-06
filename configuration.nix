@@ -56,7 +56,6 @@ in
   # Related issue: https://github.com/LnL7/nix-darwin/issues/214
   system.activationScripts.applications.text = pkgs.lib.mkForce (''
     IFS=$'\n'
-    USER_HOME=/Users/${constants.user}
     NIX_APPS_DIRECTORY=/Applications/Nix\ Apps
 
     echo "Setting up $NIX_APPS_DIRECTORY"
@@ -64,13 +63,15 @@ in
     hashApp() {
         path="$1/Contents/MacOS"; shift
 
+        # shellcheck disable=SC2044
         for bin in $(find "$path" -perm +111 -type f -maxdepth 1 2>/dev/null); do
             md5sum "$bin" | cut -b-32
         done | md5sum | cut -b-32
     }
 
-    mkdir -p $NIX_APPS_DIRECTORY
+    mkdir -p "$NIX_APPS_DIRECTORY"
 
+    # shellcheck disable=SC2044
     for app in $(find ${config.system.build.applications}/Applications -maxdepth 1 -type l); do
         name="$(basename "$app")"
 
@@ -82,8 +83,8 @@ in
 
         if [ "$hash1" != "$hash2" ]; then
             echo "Current hash of '$name' differs than the Nix store's. Overwriting..."
-            rm -rf $dst
-            cp -R "$src" $NIX_APPS_DIRECTORY
+            rm -rf "$dst"
+            cp -R "$src" "$NIX_APPS_DIRECTORY"
             echo "Done"
         fi
     done
