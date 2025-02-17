@@ -10,10 +10,6 @@ in
   # $ nix-env -qaP | grep wget
   environment.systemPackages = pkgs.callPackage ./packages.nix { inherit pkgs; };
 
-  # Auto upgrade nix package and the daemon service.
-  services.nix-daemon.enable = true;
-  # nix.package = pkgs.nix;
-
   # Necessary for using flakes on this system.
   nix.settings.experimental-features = "nix-command flakes";
 
