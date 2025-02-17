@@ -16,6 +16,7 @@ with pkgs;
   zoxide
   fzf
   ngrok
+  openssh
 
   # MacOS App packages
   obsidian
