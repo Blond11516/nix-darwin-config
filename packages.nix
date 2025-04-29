@@ -1,6 +1,6 @@
 { pkgs }:
 with pkgs;
-[ 
+[
   bat
   btop
   direnv
@@ -17,6 +17,7 @@ with pkgs;
   fzf
   ngrok
   openssh
+  ffmpeg
 
   # MacOS App packages
   obsidian
