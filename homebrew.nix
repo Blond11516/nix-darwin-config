@@ -7,7 +7,6 @@
   taps = [
     "homebrew/bundle"
     "joallard/cf-keylayout"
-    "null-dev/firefox-profile-switcher"
   ];
   brews = [
     "autoconf"
@@ -26,7 +25,6 @@
     "python@3.11"
     "wxwidgets"
     "zsh-autosuggestions"
-    "firefox-profile-switcher-connector"
     "remotemobprogramming/brew/mob"
   ];
   casks = [
