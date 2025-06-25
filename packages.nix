@@ -3,7 +3,6 @@ with pkgs;
 [
   bat
   btop
-  direnv
   curl
   flyctl
   hyperfine
