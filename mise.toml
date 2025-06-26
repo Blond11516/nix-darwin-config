@@ -1,0 +1,8 @@
+[tasks.update]
+run = "nix flake update"
+
+[tasks.switch]
+run = [
+    "git add --all",
+    "sudo darwin-rebuild switch --flake ."
+]
