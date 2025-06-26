@@ -106,7 +106,7 @@ in
       };
       dock = {
         autohide = true;
-        tilesize = 32;
+        tilesize = 48;
       };
       finder = {
         AppleShowAllExtensions = true;
