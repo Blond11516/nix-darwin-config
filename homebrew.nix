@@ -50,7 +50,7 @@
     "raycast"
     "thunderbird"
     "pycharm"
-    "docker"
+    "docker-desktop"
     "ghostty"
   ];
   # How to find a mas app ID: https://github.com/mas-cli/mas?tab=readme-ov-file#-usage
