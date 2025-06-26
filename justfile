@@ -6,4 +6,4 @@ update:
 
 switch:
 	git add --all
-	darwin-rebuild switch --flake .
+	sudo darwin-rebuild switch --flake .

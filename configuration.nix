@@ -87,6 +87,7 @@ in
   '');
 
   system = {
+    primaryUser = constants.user;
     defaults = {
       NSGlobalDomain = {
         AppleShowAllExtensions = true;
