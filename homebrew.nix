@@ -30,7 +30,6 @@
   casks = [
     "discord"
     "cf-keylayout"
-    "mongodb-compass"
     "alt-tab"
     "figma"
     "firefox"

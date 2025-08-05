@@ -6,11 +6,15 @@
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
+    # Locked version of nixpkgs with mongodb-compass 1.46.0. Starting with 1.46.7 Compass is no longer compatible with
+    # MongoDB 4.0, which we are still using for DocumentDB compatibility.
+    nixpkgs-25-05.url = "nixpkgs/release-25.05";
   };
   
-  outputs = { self, nix-darwin, nix-homebrew, ... }:
+  outputs = { self, nix-darwin, nix-homebrew, nixpkgs-25-05, ... }:
   let
     constants = import ./constants.nix;
+    pkgs-25-05 = import nixpkgs-25-05 { system = constants.system; config.allowUnfree = true; };
   in
   {
     # Build darwin flake using:
@@ -40,7 +44,7 @@
             autoMigrate = true;
           };
         }
-        (import ./configuration.nix { inherit self; })
+        (import ./configuration.nix { inherit self pkgs-25-05 ; })
       ];
     };
 

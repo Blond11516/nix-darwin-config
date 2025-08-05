@@ -1,4 +1,4 @@
-{ pkgs }:
+{ pkgs, pkgs-25-05 }:
 with pkgs;
 [
   bat
@@ -21,4 +21,5 @@ with pkgs;
   # MacOS App packages
   obsidian
   darwin.discrete-scroll
+  pkgs-25-05.mongodb-compass
 ]

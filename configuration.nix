@@ -1,4 +1,4 @@
-{ self }:
+{ self, pkgs-25-05 }:
 { pkgs, config, ... }:
 let
   constants = import ./constants.nix;
@@ -8,7 +8,7 @@ in
 
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
-  environment.systemPackages = pkgs.callPackage ./packages.nix { inherit pkgs; };
+  environment.systemPackages = pkgs.callPackage ./packages.nix { inherit pkgs pkgs-25-05; };
 
   # Necessary for using flakes on this system.
   nix.settings.experimental-features = "nix-command flakes";

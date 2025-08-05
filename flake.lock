@@ -71,11 +71,27 @@
         "type": "github"
       }
     },
+    "nixpkgs-25-05": {
+      "locked": {
+        "lastModified": 1754416195,
+        "narHash": "sha256-OVgtdBECldCHRbytf7fvkXtgQUJv6zDbuvjbWqQmJLA=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "6b8c0a2d7947465672aa0022ac22ef7f7d957811",
+        "type": "github"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "ref": "release-25.05",
+        "type": "indirect"
+      }
+    },
     "root": {
       "inputs": {
         "nix-darwin": "nix-darwin",
         "nix-homebrew": "nix-homebrew",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "nixpkgs-25-05": "nixpkgs-25-05"
       }
     }
   },
