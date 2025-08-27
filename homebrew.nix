@@ -24,7 +24,6 @@
     "openssl@1.1"
     "python@3.11"
     "wxwidgets"
-    "zsh-autosuggestions"
     "remotemobprogramming/brew/mob"
   ];
   casks = [
@@ -41,12 +40,10 @@
     "keymapp"
     "zed"
     "dbeaver-community"
-    "alacritty"
     "slack"
     "visual-studio-code"
     "intellij-idea"
     "yaak"
-    "raycast"
     "thunderbird"
     "pycharm"
     "docker-desktop"
